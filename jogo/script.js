@@ -20,8 +20,23 @@ function criarCobrinha()
 	}
 }
 
+document.addEventListener('keydown', update)
+
+function update(event)
+{
+	if(event.keyCode == 37 && direcao != "direita") direcao = "esquerda"
+	if(event.keyCode == 38 && direcao != "baixo") direcao = "cima"
+	if(event.keyCode == 39 && direcao != "esquerda") direcao = "direita"
+	if(event.keyCode == 40 && direcao != "cima") direcao = "baixo"
+}
+
 function iniciarJogo()
 {
+	if(cobrinha[0].x > 15 * box && direcao == "direita") cobrinha[0].x = 0
+	if(cobrinha[0].x > 0 * box && direcao == "esquerda") cobrinha[0].x = 16 * box
+	if(cobrinha[0].y > 15 * box && direcao == "baixo") cobrinha[0].y = 0
+	if(cobrinha[0].y > 0 * box && direcao == "cima") cobrinha[0].y = 16 * box
+
 	criarBG()
 	criarCobrinha()
 	let cobrinhaX = cobrinha[0].x
