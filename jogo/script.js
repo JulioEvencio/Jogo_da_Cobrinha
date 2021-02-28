@@ -22,12 +22,11 @@ function criarCobrinha()
 
 document.addEventListener('keydown', update)
 
-function update(event)
-{
-	if(event.keyCode == 37 && direcao != "direita") direcao = "esquerda"
-	if(event.keyCode == 38 && direcao != "baixo") direcao = "cima"
-	if(event.keyCode == 39 && direcao != "esquerda") direcao = "direita"
-	if(event.keyCode == 40 && direcao != "cima") direcao = "baixo"
+function update(event){
+    if(event.keyCode == 37 && direcao != 'direita') direcao = 'esquerda'
+    if(event.keyCode == 38 && direcao != 'baixo') direcao = 'cima'
+    if(event.keyCode == 39 && direcao != 'esquerda') direcao = 'direita'
+    if(event.keyCode == 40 && direcao != 'cima') direcao = 'baixo'
 }
 
 function iniciarJogo()
@@ -43,8 +42,8 @@ function iniciarJogo()
 	let cobrinhaY = cobrinha[0].y
 	if(direcao == "direita") cobrinhaX += box
 	if(direcao == "esquerda") cobrinhaX -= box
-	if(direcao == "cima") cobrinhaX -= box
-	if(direcao == "baixo") cobrinhaX += box
+	if(direcao == "cima") cobrinhaY -= box
+	if(direcao == "baixo") cobrinhaY += box
 
 	cobrinha.pop()
 	let novaCabeca = {x: cobrinhaX, y: cobrinhaY}
