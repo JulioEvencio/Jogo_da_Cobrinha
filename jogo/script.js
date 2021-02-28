@@ -3,6 +3,7 @@ let context = canvas.getContext("2d")
 let box = 32
 let cobrinha = []
 cobrinha[0] = {x: 8 * box, y: 8 * box}
+let direcao = "direita"
 
 function criarBG()
 {
@@ -19,5 +20,20 @@ function criarCobrinha()
 	}
 }
 
-criarBG()
-criarCobrinha()
+function iniciarJogo()
+{
+	criarBG()
+	criarCobrinha()
+	let cobrinhaX = cobrinha[0].x
+	let cobrinhaY = cobrinha[0].y
+	if(direcao == "direita") cobrinhaX += box
+	if(direcao == "esquerda") cobrinhaX -= box
+	if(direcao == "cima") cobrinhaX -= box
+	if(direcao == "baixo") cobrinhaX += box
+
+	cobrinha.pop()
+	let novaCabeca = {x: cobrinhaX, y: cobrinhaY}
+	cobrinha.unshift(novaCabeca)
+}
+
+let jogo = setInterval(iniciarJogo, 100)
