@@ -40,9 +40,9 @@ function update(event)
 function iniciarJogo()
 {
 	if(cobrinha[0].x > 15 * box && direcao == "direita") cobrinha[0].x = 0
-	if(cobrinha[0].x > 0 * box && direcao == "esquerda") cobrinha[0].x = 16 * box
+	if(cobrinha[0].x < 0 * box && direcao == "esquerda") cobrinha[0].x = 16 * box
 	if(cobrinha[0].y > 15 * box && direcao == "baixo") cobrinha[0].y = 0
-	if(cobrinha[0].y > 0 * box && direcao == "cima") cobrinha[0].y = 16 * box
+	if(cobrinha[0].y < 0 * box && direcao == "cima") cobrinha[0].y = 16 * box
 
 	for(i = 1; i < cobrinha.length; i++)
 	{
@@ -56,6 +56,7 @@ function iniciarJogo()
 	criarBG()
 	desenharComida()
 	criarCobrinha()
+
 	let cobrinhaX = cobrinha[0].x
 	let cobrinhaY = cobrinha[0].y
 	if(direcao == "direita") cobrinhaX += box
