@@ -4,6 +4,7 @@ let box = 32
 let cobrinha = []
 cobrinha[0] = {x: 8 * box, y: 8 * box}
 let direcao = "direita"
+let comida = {x: Math.floor(Math.random() * 15 + 1) * box, y: Math.floor(Math.random() * 15 + 1) * box}
 
 function criarBG()
 {
@@ -20,9 +21,16 @@ function criarCobrinha()
 	}
 }
 
+function desenharComida()
+{
+	context.fillStyle = "red"
+	context.fillRect(comida.x, comida.y, box, box)
+}
+
 document.addEventListener('keydown', update)
 
-function update(event){
+function update(event)
+{
     if(event.keyCode == 37 && direcao != 'direita') direcao = 'esquerda'
     if(event.keyCode == 38 && direcao != 'baixo') direcao = 'cima'
     if(event.keyCode == 39 && direcao != 'esquerda') direcao = 'direita'
@@ -37,6 +45,7 @@ function iniciarJogo()
 	if(cobrinha[0].y > 0 * box && direcao == "cima") cobrinha[0].y = 16 * box
 
 	criarBG()
+	desenharComida()
 	criarCobrinha()
 	let cobrinhaX = cobrinha[0].x
 	let cobrinhaY = cobrinha[0].y
