@@ -54,7 +54,16 @@ function iniciarJogo()
 	if(direcao == "cima") cobrinhaY -= box
 	if(direcao == "baixo") cobrinhaY += box
 
-	cobrinha.pop()
+	if(cobrinhaX != comida.x || cobrinhaY != comida.y)
+	{
+		cobrinha.pop()
+	}
+	else
+	{
+		comida.x = Math.floor(Math.random() * 15 + 1) * box
+		comida.y = Math.floor(Math.random() * 15 + 1) * box
+	}
+
 	let novaCabeca = {x: cobrinhaX, y: cobrinhaY}
 	cobrinha.unshift(novaCabeca)
 }
