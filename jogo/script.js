@@ -5,6 +5,8 @@ let cobrinha = []
 cobrinha[0] = {x: 8 * box, y: 8 * box}
 let direcao = "direita"
 let comida = {x: Math.floor(Math.random() * 15 + 1) * box, y: Math.floor(Math.random() * 15 + 1) * box}
+let pontos = document.getElementById("pontuacao")
+let pontuacao = 0
 
 function criarBG()
 {
@@ -56,6 +58,7 @@ function iniciarJogo()
 	criarBG()
 	desenharComida()
 	criarCobrinha()
+	pontos.innerHTML = "Pontuacao: " + pontuacao
 
 	let cobrinhaX = cobrinha[0].x
 	let cobrinhaY = cobrinha[0].y
@@ -72,6 +75,7 @@ function iniciarJogo()
 	{
 		comida.x = Math.floor(Math.random() * 15 + 1) * box
 		comida.y = Math.floor(Math.random() * 15 + 1) * box
+		pontuacao += 10
 	}
 
 	let novaCabeca = {x: cobrinhaX, y: cobrinhaY}
