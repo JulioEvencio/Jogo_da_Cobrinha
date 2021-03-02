@@ -6,6 +6,8 @@ várias imitações em vídeo-games e computadores. No fim dos anos 90 foi popul
 
 Esta é uma versão personalizada do jogo seguindo o tutorial da Digital Innovation One, com a pontuação acrescentada.
 
+[Link para jogar](https://julioevencio.github.io/Jogo_da_Cobrinha/jogo/)
+
 ## Objetivo
 Controlar uma longa e fina cobra, coletando comida, não podendo colidir com seu próprio corpo. Quanto mais comidas forem comidas maior será
 sua pontuação.
