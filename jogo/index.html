@@ -9,28 +9,39 @@
 </head>
 <body>
 	<header>
-		<h1>Jogo da cobrinha</h1>
+		<div class="container">
+			<h1>Jogo da cobrinha</h1>
+		</div>
 	</header>
 
 	<main>
-		<div id="menu">
-			<p id="mensagem-derrota">Você perdeu! Pontuação: 999</p>
-			<button id="jogar">Jogar</button>
-		</div>
+		<div class="container">
+			<div id="menu">
+				<p id="mensagem-derrota">Você perdeu! Pontuação: 999</p>
 
-		<div id="jogo">
-			<p id="pontuacao"> Pontuação: 0 </p>
-			<canvas id="jogo-tela"></canvas>
+				<button onclick="jogar()">Jogar</button>
+			</div>
+
+			<div id="jogo">
+				<p>Utilize as teclas: W, A, S e D</p>
+
+				<p id="pontuacao">Pontuação: 0</p>
+
+				<canvas id="jogo-tela" width="512" height="512"></canvas>
+			</div>
 		</div>
 	</main>
 
 	<footer>
-		<p>
-			Jogo feito por Júlio Evêncio para o bootcamp da
-			<a href="https://www.dio.me" target="_blank">Digital Innovation One</a>
-			<br>
-			<a href="https://github.com/JulioEvencio/Jogo_da_Cobrinha" target="_blank">GitHub</a>
-		</p>
+		<div class="container">
+			<p>
+				Jogo feito por <strong>Júlio Evêncio</strong> para o bootcamp da
+				<a href="https://www.dio.me" target="_blank">Digital Innovation One</a>
+				<br>
+				Link do repositório:
+				<a href="https://github.com/JulioEvencio/Jogo_da_Cobrinha" target="_blank">GitHub</a>
+			</p>
+		</div>
 	</footer>
 </body>
 </html>
